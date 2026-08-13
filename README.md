@@ -21,30 +21,24 @@
 #### 1. Initial Concept (Exploratory Phase)
 When starting out without knowing the exact model requirements, the initial plan relied on a simple rule-based approach (**VADER** sentiment analyzer) paired with Steam API fetching.
 
+```text
 [ INITIAL EXPLORATORY FLOW ]
-   ├── Fetch Steam Reviews (App ID 2132850)
-   ├── Run VADER Rule-Based Sentiment Analysis
-   └── Export basic polarity scores
+   └── 1. Fetch Steam Reviews (App ID: 2132850)
+   └── 2. Run VADER Rule-Based Sentiment Analysis
+   └── 3. Export Basic Polarity Scores
 
 #### 2. Final Architecture (Upgraded Pipeline)
 Upon inspecting early test outputs, we discovered VADER failed to understand gaming slang (lag, Robux, ban, scam), and Steam's API payload had mapping issues. We pivoted the data source and upgraded the NLP engine:
 
 [ FINAL PIPELINE FLOW ]
-   │
    ├── 1. Fetch Google Play reviews for 'com.roblox.client' (limit = 100, lang = 'en')
-   │
    ├── 2. Clean & Preprocess Review Text
-   │
    ├── 3. Process text using RoBERTa Transformer ('cardiffnlp/twitter-roberta-base-sentiment-latest')
-   │
    ├── 4. Map Model Labels (label_0 -> negative, label_1 -> neutral, label_2 -> positive)
-   │
    ├── 5. Export structured results to CSV ('roblox_sentiment_reviews.csv' with UTF-8-SIG)
-   │
    ├── 6. Generate Matplotlib Sentiment Distribution Chart ('sentiment_chart.png')
-   │
    └── 7. Output Executive Terminal Summary (Top keywords for Positive & Negative feedback)
-   │
+"""
 [ END ]
 
 ---
