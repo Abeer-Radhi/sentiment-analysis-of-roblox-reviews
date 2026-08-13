@@ -50,8 +50,6 @@ Upon inspecting early test outputs, we discovered VADER failed to understand gam
    └── 7. Output Executive Terminal Summary (Top keywords for Positive & Negative feedback)
    
 
-[ END ]
-
 ---
 
 ## 4. Testing & Validation
