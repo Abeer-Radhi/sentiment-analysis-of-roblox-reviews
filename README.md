@@ -24,7 +24,9 @@ When starting out without knowing the exact model requirements, the initial plan
 
 [ INITIAL EXPLORATORY FLOW ]
    └── 1. Fetch Steam Reviews (App ID: 2132850)
+   
    └── 2. Run VADER Rule-Based Sentiment Analysis
+   
    └── 3. Export Basic Polarity Scores
 
 #### 2. Final Architecture (Upgraded Pipeline)
