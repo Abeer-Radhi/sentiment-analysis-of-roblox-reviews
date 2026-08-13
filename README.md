@@ -21,7 +21,7 @@
 #### 1. Initial Concept (Exploratory Phase)
 When starting out without knowing the exact model requirements, the initial plan relied on a simple rule-based approach (**VADER** sentiment analyzer) paired with Steam API fetching.
 
-```text
+
 [ INITIAL EXPLORATORY FLOW ]
    └── 1. Fetch Steam Reviews (App ID: 2132850)
    └── 2. Run VADER Rule-Based Sentiment Analysis
@@ -38,7 +38,7 @@ Upon inspecting early test outputs, we discovered VADER failed to understand gam
    ├── 5. Export structured results to CSV ('roblox_sentiment_reviews.csv' with UTF-8-SIG)
    ├── 6. Generate Matplotlib Sentiment Distribution Chart ('sentiment_chart.png')
    └── 7. Output Executive Terminal Summary (Top keywords for Positive & Negative feedback)
-"""
+
 [ END ]
 
 ---
