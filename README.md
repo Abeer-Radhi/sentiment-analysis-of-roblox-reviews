@@ -84,10 +84,10 @@ Upon inspecting early test outputs, we discovered VADER failed to understand gam
 | :--- | :--- | :--- | :--- |
 | **Data Fetching (Steam API)** | Write a Python script to fetch 50 Roblox reviews from Steam API (`App ID: 2132850`) into a Pandas DataFrame. | Created `fetch_roblox_reviews(limit=50)` returning `review_text`, `recommended`, `playtime_hours`, and `timestamp`. | Fixed Windows UTF-8 terminal encoding. Tested and verified execution. |
 | **Data Source Pivot (Google Play)** | Switch data source to fetch public Google Play Store reviews for `com.roblox.client` due to Steam API mapping issues. | Replaced Steam API logic with `google-play-scraper` fetching recent English reviews. | Updated DataFrame structure to support Play Store rating scores and text content. |
-| **Model Evaluation & Upgrade** | Replace initial VADER model with Hugging Face RoBERTa transformer (`cardiffnlp/twitter-roberta-base-sentiment-latest`) to capture gaming slang. | Integrated Hugging Face pipeline, updated CSV saving to `roblox_sentiment_reviews.csv`, and generated `sentiment_chart.png`. | Added explicit label mapping (`label_0`, `label_1`, `label_2` -> `negative`, `neutral`, `positive`) to fix chart calculation bugs. |
+| **Model Evaluation & Upgrade** | Replace initial VADER model with Hugging Face RoBERTa transformer (`cardiffnlp/twitter-roberta-base-sentiment-latest`) to capture gaming slang. | Integrated Hugging Face pipeline, updated CSV saving to `roblox_sentiment_reviews.csv`, and generated `sentiment_chart.png`. | Added explicit label mapping (`label_0`, `label_1`, `label_2` -> `negative`, `neutral`, `positive`) to fix chart calculation bugs. || **Execution & Terminal Cleanup** | Resolve PowerShell `AmpersandNotAllowed` error when running Main.py. | Advised running script directly via clean PowerShell 
 
 The link of prompt log: https://opncd.ai/share/o4AzeX9a
 
 Thank your for reading!
-| **Execution & Terminal Cleanup** | Resolve PowerShell `AmpersandNotAllowed` error when running Main.py. | Advised running script directly via clean PowerShell command. | Executed `python Main.py` successfully in Terminal. |
+command. | Executed `python Main.py` successfully in Terminal. |
 """
