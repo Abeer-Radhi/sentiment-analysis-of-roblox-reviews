@@ -1,4 +1,3 @@
-"""
 # sentiment-analysis-of-roblox-reviews
 
 ## 1. Project Information
@@ -89,5 +88,3 @@ Upon inspecting early test outputs, we discovered VADER failed to understand gam
 The link of prompt log: https://opncd.ai/share/o4AzeX9a
 
 Thank your for reading!
-
-"""
