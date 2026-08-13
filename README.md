@@ -4,12 +4,12 @@
 * **Project Name:** Roblox Player Sentiment & Feedback Pipeline
 * **Team Members:** Abeer Radhi & Sarah Mohamed
 * **Challenge Topics Used:** Web Scraping / Public APIs & Sentiment Analysis (NLP)
-* **OpenCode Model Used:** Big Pickle (`opencode/big-pickle`)
+* **OpenCode Model Used:** Big Pickle (`opencode/big-pickle`), DeepSeek, Gemini, Google, Nvidia(GLM)
 
 ---
 
 ## 2. Problem Statement & Objectives
-* **What We Built:** An automated Python data pipeline that scrapes public Google Play Store reviews for Roblox, processes raw feedback text using a pre-trained Transformer model (`RoBERTa`), maps sentiment categories, exports clean CSV datasets (`roblox_sentiment_reviews.csv`), and generates visualization charts (`sentiment_chart.png`).
+* **What We Built:** An automated Python data pipeline that scrapes public Google Play Store reviews for Roblox, processes raw feedback text using a pre trained Transformer model (`RoBERTa`), maps sentiment categories, exports clean CSV datasets (`roblox_sentiment_reviews.csv`), and generates visualization charts (`sentiment_chart.png`).
 * **Why This Idea:** Roblox hosts millions of active daily players who post thousands of reviews regarding game updates, server stability, microtransactions (Robux), and account bans. Manual review collection is impossible. Automating this feedback pipeline enables game developers and community managers to instantly capture true player sentiment, uncover top complaints, and make data-driven decisions to boost player retention.
 
 ---
@@ -31,7 +31,7 @@ When starting out without knowing the exact model requirements, the initial plan
    └── 3. Export Basic Polarity Scores
 
 #### 2. Final Architecture (Upgraded Pipeline)
-Upon inspecting early test outputs, we discovered VADER failed to understand gaming slang (lag, Robux, ban, scam), and Steam's API payload had mapping issues. We pivoted the data source and upgraded the NLP engine:
+Upon inspecting early test outputs, we discovered that Roblox is unavailable on STEAM, and VADER failed to understand gaming slang. We pivoted the data source and upgraded the NLP engine:
 
 [ FINAL PIPELINE FLOW ]
 
@@ -46,9 +46,7 @@ Upon inspecting early test outputs, we discovered VADER failed to understand gam
    ├── 5. Export structured results to CSV ('roblox_sentiment_reviews.csv' with UTF-8-SIG)
    
    ├── 6. Generate Matplotlib Sentiment Distribution Chart ('sentiment_chart.png')
-   
-   └── 7. Output Executive Terminal Summary (Top keywords for Positive & Negative feedback)
-   
+
 
 ---
 
@@ -88,6 +86,9 @@ Upon inspecting early test outputs, we discovered VADER failed to understand gam
 | **Data Source Pivot (Google Play)** | Switch data source to fetch public Google Play Store reviews for `com.roblox.client` due to Steam API mapping issues. | Replaced Steam API logic with `google-play-scraper` fetching recent English reviews. | Updated DataFrame structure to support Play Store rating scores and text content. |
 | **Model Evaluation & Upgrade** | Replace initial VADER model with Hugging Face RoBERTa transformer (`cardiffnlp/twitter-roberta-base-sentiment-latest`) to capture gaming slang. | Integrated Hugging Face pipeline, updated CSV saving to `roblox_sentiment_reviews.csv`, and generated `sentiment_chart.png`. | Added explicit label mapping (`label_0`, `label_1`, `label_2` -> `negative`, `neutral`, `positive`) to fix chart calculation bugs. || **Execution & Terminal Cleanup** | Resolve PowerShell `AmpersandNotAllowed` error when running Main.py. | Advised running script directly via clean PowerShell command. | Executed `python Main.py` successfully in Terminal. |
 
-The link of prompt log: https://opncd.ai/share/o4AzeX9a
+The links of prompt log: 
+1. https://opncd.ai/share/o4AzeX9a
+2. https://opncd.ai/share/Hw3lbWSy
 
+   
 Thank your for reading!
