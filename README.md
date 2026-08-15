@@ -24,28 +24,28 @@ When starting out without knowing the exact model requirements, the initial plan
 
 [ INITIAL EXPLORATORY FLOW ]
 
-   └── 1. Fetch Steam Reviews (App ID: 2132850)
+   └─ 1. Fetch Steam Reviews (App ID: 2132850)
    
-   └── 2. Run VADER Rule-Based Sentiment Analysis
+   └─ 2. Run VADER Rule-Based Sentiment Analysis
    
-   └── 3. Export Basic Polarity Scores
+   └─ 3. Export Basic Polarity Scores
 
 #### 2. Final Architecture (Upgraded Pipeline)
 Upon inspecting early test outputs, we discovered that Roblox is unavailable on STEAM, and VADER failed to understand gaming slang. We pivoted the data source and upgraded the NLP engine:
 
 [ FINAL PIPELINE FLOW ]
 
-   ├── 1. Fetch Google Play reviews for 'com.roblox.client' (limit = 100, lang = 'en')
+   ├ 1. Fetch Google Play reviews for 'com.roblox.client' (limit = 100, lang = 'en')
    
-   ├── 2. Clean & Preprocess Review Text
+   ├ 2. Clean & Preprocess Review Text
    
-   ├── 3. Process text using RoBERTa Transformer ('cardiffnlp/twitter-roberta-base-sentiment-latest')
+   ├ 3. Process text using RoBERTa Transformer ('cardiffnlp/twitter-roberta-base-sentiment-latest')
    
-   ├── 4. Map Model Labels (label_0 -> negative, label_1 -> neutral, label_2 -> positive)
+   ├ 4. Map Model Labels (label_0 -> negative, label_1 -> neutral, label_2 -> positive)
    
-   ├── 5. Export structured results to CSV ('roblox_sentiment_reviews.csv' with UTF-8-SIG)
+   ├ 5. Export structured results to CSV ('roblox_sentiment_reviews.csv' with UTF-8-SIG)
    
-   ├── 6. Generate Matplotlib Sentiment Distribution Chart ('sentiment_chart.png')
+   ├ 6. Generate Matplotlib Sentiment Distribution Chart ('sentiment_chart.png')
 
 
 ---
@@ -91,4 +91,4 @@ The links of prompt log:
 2. https://opncd.ai/share/Hw3lbWSy
 
    
-Thank your for reading!
+Thank you!
